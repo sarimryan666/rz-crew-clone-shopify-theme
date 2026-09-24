@@ -10,7 +10,7 @@
   {% endif %}
   <link rel="canonical" href="{{ canonical_url }}">
 
-  {{ content_for_header }}
+  
   
   
  <meta charset="utf-8"/>
@@ -1398,8 +1398,7 @@
  <script>
         window.AVADA_SITE_VERTIFICATION_ENABLED = true;
     </script>
- END app block 
- <script>
+  <script>
         window.wpdExtensionIsProductPage = "";;
         window.wpdExtensionIsCartPage = false;
 
@@ -1456,8 +1455,7 @@
         window.wpdAPIRootUrl = "https://bdr.wholesalehelper.io/";
         window.wpdHasGuestDiscounts = false;
     </script>
- END app block 
- <script>
+  <script>
         window.AVADA_SEO_ENABLED = true;
     </script>
  BEGIN app snippet: avada-seo-site 
@@ -1557,8 +1555,7 @@
     </script>
 <script defer="defer" src="https://cdn.shopify.com/extensions/01a0c75c-b68f-70e6-838c-fbec76fe1b35/avada-seo-suite-291/assets/flying-pages.js"></script>
  END app snippet 
- END app block 
-<script defer="defer" src="https://cdn.shopify.com/extensions/019fa343-b2f0-7393-a89f-266e9cd6bc68/searchanise-shopify-cli-27/assets/disable-app.js" type="text/javascript"></script>
+ <script defer="defer" src="https://cdn.shopify.com/extensions/019fa343-b2f0-7393-a89f-266e9cd6bc68/searchanise-shopify-cli-27/assets/disable-app.js" type="text/javascript"></script>
 <script defer="defer" src="https://cdn.shopify.com/extensions/01a06753-b623-7a4c-9e8b-7e895a3d3bb2/easysearch-ymm-152/assets/easysearch.min.js" type="text/javascript"></script>
 <script defer="defer" src="https://cdn.shopify.com/extensions/01a0a8f7-715f-73b2-ba8a-e07c4a290b47/social-widget-90/assets/social-widget-base.min.js" type="text/javascript"></script>
 <script defer="defer" src="https://cdn.shopify.com/extensions/01a03210-ceed-7773-be40-945c108f7fc5/notify-12/assets/main.js" type="text/javascript"></script>
@@ -3414,6 +3411,7 @@
 <meta content="84a10d4c-fdba-41a9-9eaf-e2764c0b3e4e" data-expiration="1790073274000" name="shopify-s"/>
 <meta content="t" name="new-cookie-storage-activated"/>
 
+  {{ content_for_header }}
 </head>
 <body class="template-{{ template.name }}">
   {% section 'header' %}
