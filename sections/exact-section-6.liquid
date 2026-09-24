@@ -3,10 +3,10 @@
 {% endschema %}
 
 <div>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-card-overlay.css?v=161236396453744029751787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-collage.css?v=150128554514050036601787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-pills.css?v=59579235200870411781787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-scroller.css?v=177406495511505368791787801425" media="all" rel="stylesheet" type="text/css"/>
+{{ 'component-card-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-collage.css' | asset_url | stylesheet_tag }}
+{{ 'component-pills.css' | asset_url | stylesheet_tag }}
+{{ 'component-scroller.css' | asset_url | stylesheet_tag }}
 <style>
                 #shopify-section-template--20303925182646__collection_list_VKwC9a .block-section {
                     margin-top: 48px;

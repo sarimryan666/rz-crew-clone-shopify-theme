@@ -3,10 +3,10 @@
 {% endschema %}
 
 <div>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/flickity.css?v=6357470282299555321787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/section-slideshow.css?v=145134602633649386931787801425" media="all" rel="stylesheet" type="text/css"/>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/flickity.pkgd.js?v=117200526029702696491787801425"></script>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/slideshow.js?v=38345439225828891241787801425"></script>
+{{ 'flickity.css' | asset_url | stylesheet_tag }}
+{{ 'section-slideshow.css' | asset_url | stylesheet_tag }}
+<script src=\"{{ 'flickity.pkgd.js' | asset_url }}\" defer=\"defer\"></script>
+<script src=\"{{ 'slideshow.js' | asset_url }}\" defer=\"defer\"></script>
 <style>
                 #shopify-section-template--20303925182646__slideshow .block-section {
                     margin-top: 0px;

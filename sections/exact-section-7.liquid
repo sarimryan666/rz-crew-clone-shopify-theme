@@ -3,9 +3,9 @@
 {% endschema %}
 
 <div>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-card.css?v=139427368760719837831787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/section-features.css?v=84871257165146345951787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-scroller.css?v=177406495511505368791787801425" media="all" rel="stylesheet" type="text/css"/>
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-features.css' | asset_url | stylesheet_tag }}
+{{ 'component-scroller.css' | asset_url | stylesheet_tag }}
 <style>
                 #shopify-section-template--20303925182646__features_Ukwtpf .block-section {
                     margin-top: 48px;

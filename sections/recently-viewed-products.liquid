@@ -2,13 +2,13 @@
 { "name": "Recently Viewed Products", "settings": [] }
 {% endschema %}
 
-<section class="shopify-section section section-recently-viewed-products" id="shopify-section-template--20303925543094__recently-viewed-products"><script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/recently-viewed-products.js?v=149478910179156159531787801425"></script>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-card-overlay.css?v=161236396453744029751787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-card.css?v=139427368760719837831787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-price.css?v=48553542294817073951787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-pills.css?v=59579235200870411781787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-scroller.css?v=177406495511505368791787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-rating.css?v=94823490843142186841787801425" media="all" rel="stylesheet" type="text/css"/>
+<section class="shopify-section section section-recently-viewed-products" id="shopify-section-template--20303925543094__recently-viewed-products"><script src=\"{{ 'recently-viewed-products.js' | asset_url }}\" defer=\"defer\"></script>
+{{ 'component-card-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-pills.css' | asset_url | stylesheet_tag }}
+{{ 'component-scroller.css' | asset_url | stylesheet_tag }}
+{{ 'component-rating.css' | asset_url | stylesheet_tag }}
 <recently-viewed-products data-columns="4" data-section-id="template--20303925543094__recently-viewed-products">
 </recently-viewed-products>
 </section>

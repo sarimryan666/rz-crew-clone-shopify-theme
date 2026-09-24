@@ -3,9 +3,9 @@
 {% endschema %}
 
 <div>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/section-footer.css?v=152138019226919897161787801425" media="all" rel="stylesheet" type="text/css"/>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/button-top.js?v=143728191179442520481787801425"></script>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-button-top.css?v=23341819898534136861787801425" media="print" onload="this.media='all'" rel="stylesheet"/>
+{{ 'section-footer.css' | asset_url | stylesheet_tag }}
+<script src=\"{{ 'button-top.js' | asset_url }}\" defer=\"defer\"></script>
+{{ 'component-button-top.css' | asset_url | stylesheet_tag }}
 <div class="color-scheme-a6d67e31-29cc-4c2b-a126-1b7fd0917e5b">
 <div class="container">
 <div class="footer-blocks-wrapper grid grid-1-col grid-3-col-tablet">

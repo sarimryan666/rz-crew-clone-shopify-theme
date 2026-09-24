@@ -3,14 +3,14 @@
 {% endschema %}
 
 <div>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/section-main-product.css?v=83975275438950481151787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-price.css?v=48553542294817073951787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-rating.css?v=94823490843142186841787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-pills.css?v=59579235200870411781787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-tooltip.css?v=68833311246319414531787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-deferred-media.css?v=14953749908047227561787801425" media="all" rel="stylesheet" type="text/css"/>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/product-form.js?v=126091133551130777111787801425"></script>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/flickity.css?v=6357470282299555321787801425" media="all" rel="stylesheet" type="text/css"/>
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-rating.css' | asset_url | stylesheet_tag }}
+{{ 'component-pills.css' | asset_url | stylesheet_tag }}
+{{ 'component-tooltip.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+<script src=\"{{ 'product-form.js' | asset_url }}\" defer=\"defer\"></script>
+{{ 'flickity.css' | asset_url | stylesheet_tag }}
 <style>
                 #shopify-section-template--20303925182646__featured-product .block-section {
                     margin-top: 32px;
@@ -285,9 +285,9 @@
 </div>
 </div>
 </div>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/flickity.pkgd.js?v=117200526029702696491787801425"></script>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/media-gallery.js?v=169589892940214413891787801425"></script>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/product-modal.js?v=87528540842647866261787801425"></script>
+<script src=\"{{ 'flickity.pkgd.js' | asset_url }}\" defer=\"defer\"></script>
+<script src=\"{{ 'media-gallery.js' | asset_url }}\" defer=\"defer\"></script>
+<script src=\"{{ 'product-modal.js' | asset_url }}\" defer=\"defer\"></script>
 <script type="application/ld+json">
                 {
                     "@context": "http:\/\/schema.org\/",

@@ -3,15 +3,15 @@
 {% endschema %}
 
 <div>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-card-overlay.css?v=161236396453744029751787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-card.css?v=139427368760719837831787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-price.css?v=48553542294817073951787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-pills.css?v=59579235200870411781787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-scroller.css?v=177406495511505368791787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-rating.css?v=94823490843142186841787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/flickity.css?v=6357470282299555321787801425" media="all" rel="stylesheet" type="text/css"/>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/flickity.pkgd.js?v=117200526029702696491787801425"></script>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/carousel-slider.js?v=23723035243136328551787801425"></script>
+{{ 'component-card-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-pills.css' | asset_url | stylesheet_tag }}
+{{ 'component-scroller.css' | asset_url | stylesheet_tag }}
+{{ 'component-rating.css' | asset_url | stylesheet_tag }}
+{{ 'flickity.css' | asset_url | stylesheet_tag }}
+<script src=\"{{ 'flickity.pkgd.js' | asset_url }}\" defer=\"defer\"></script>
+<script src=\"{{ 'carousel-slider.js' | asset_url }}\" defer=\"defer\"></script>
 <style>
                 #shopify-section-template--20303925182646__featured-collection-2 .card-overlay::after {
                     background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) 100%);

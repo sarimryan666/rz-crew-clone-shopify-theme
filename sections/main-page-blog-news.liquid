@@ -3,7 +3,7 @@
 {% endschema %}
 
 <main class="main" id="MainContent" role="main" tabindex="-1">
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-breadcrumb.css?v=121571901775961151671787801425" media="all" rel="stylesheet" type="text/css"/>
+{{ 'component-breadcrumb.css' | asset_url | stylesheet_tag }}
 <div class="breadcrumb">
 <div class="container">
 <a href="/">Home</a>
@@ -11,8 +11,8 @@
 <span class="breadcrumb-item">News</span>
 </div>
 </div>
-<section class="shopify-section section-main-blog" id="shopify-section-template--20303924625590__main"><link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-card.css?v=139427368760719837831787801425" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/section-main-blog.css?v=65514456506522783431787801425" media="all" rel="stylesheet" type="text/css"/>
+<section class="shopify-section section-main-blog" id="shopify-section-template--20303924625590__main">{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
 <div class="container">
 <div class="block-section"><div class="main-blog section-template--20303924625590__main">
 <h1 class="page-title page-title-center">
@@ -251,7 +251,7 @@
 </a>
 </article></div></div>
 </div>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-pagination.css?v=91251447819610729841787801425" media="print" onload="this.media='all'" rel="stylesheet"/><div class="pagination" data-page="1">
+{{ 'component-pagination.css' | asset_url | stylesheet_tag }}<div class="pagination" data-page="1">
 <span class="page-number page-number-active">1</span><a aria-label="Page 2" class="page-number" href="/blogs/news?page=2">2</a>
 <a aria-label="Next page" class="page-number page-number-next" href="/blogs/news?page=2">
 <svg class="icon icon-chevron-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
