@@ -1,10 +1,17 @@
 {
   "sections": {
-    "main": {
-      "type": "main-collection"
+    "featured": {
+      "type": "featured-products",
+      "settings": {
+        "title": "Catalog Products"
+      }
+    },
+    "newsletter": {
+      "type": "newsletter"
     }
   },
   "order": [
-    "main"
+    "featured",
+    "newsletter"
   ]
 }

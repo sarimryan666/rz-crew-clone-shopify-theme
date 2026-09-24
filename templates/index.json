@@ -1,50 +1,45 @@
 {
   "sections": {
-    "exact-section-1": {
-      "type": "exact-section-1"
+    "hero": {
+      "type": "hero-banner"
     },
-    "exact-section-2": {
-      "type": "exact-section-2"
+    "vehicle_selector": {
+      "type": "vehicle-selector"
     },
-    "exact-section-3": {
-      "type": "exact-section-3"
+    "featured": {
+      "type": "featured-products",
+      "settings": {
+        "title": "The RZCREW Products!"
+      }
     },
-    "exact-section-4": {
-      "type": "exact-section-4"
+    "distributor": {
+      "type": "distributor-banner"
     },
-    "exact-section-5": {
-      "type": "exact-section-5"
+    "universal": {
+      "type": "universal-categories"
     },
-    "exact-section-6": {
-      "type": "exact-section-6"
+    "trust": {
+      "type": "trust-badges"
     },
-    "exact-section-7": {
-      "type": "exact-section-7"
+    "focus": {
+      "type": "focus-product"
     },
-    "exact-section-8": {
-      "type": "exact-section-8"
+    "reviews": {
+      "type": "google-reviews"
     },
-    "exact-section-9": {
-      "type": "exact-section-9"
-    },
-    "exact-section-10": {
-      "type": "exact-section-10"
-    },
-    "exact-section-11": {
-      "type": "exact-section-11"
+    "newsletter": {
+      "type": "newsletter"
     }
   },
   "order": [
-    "exact-section-1",
-    "exact-section-2",
-    "exact-section-3",
-    "exact-section-4",
-    "exact-section-5",
-    "exact-section-6",
-    "exact-section-7",
-    "exact-section-8",
-    "exact-section-9",
-    "exact-section-10",
-    "exact-section-11"
+    "hero",
+    "vehicle_selector",
+    "featured",
+    "distributor",
+    "universal",
+    "trust",
+    "focus",
+    "reviews",
+    "newsletter"
   ]
 }

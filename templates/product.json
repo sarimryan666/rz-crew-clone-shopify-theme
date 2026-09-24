@@ -3,16 +3,12 @@
     "main": {
       "type": "main-product"
     },
-    "recommendations": {
-      "type": "product-recommendations"
-    },
-    "recently-viewed": {
-      "type": "recently-viewed-products"
+    "newsletter": {
+      "type": "newsletter"
     }
   },
   "order": [
     "main",
-    "recommendations",
-    "recently-viewed"
+    "newsletter"
   ]
 }

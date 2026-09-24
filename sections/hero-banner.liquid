@@ -2,24 +2,13 @@
 { "name": "Hero Banner", "settings": [] }
 {% endschema %}
 
-<style>
-  .hero-banner-wrap { position: relative; background: linear-gradient(135deg, rgba(11,13,17,0.92), rgba(20,23,31,0.85)), url('https://rzcrewgarage.com/cdn/shop/files/Rzcrew_Racing_1400x_d591fab7-1d21-4fad-a3e3-d6e555ec38c2.webp') center/cover; padding: 90px 20px 110px; text-align: center; border-bottom: 1px solid #282e3d; font-family: 'Outfit', sans-serif; }
-  .hero-tag { display: inline-block; background: rgba(230,28,36,0.15); border: 1px solid #e61c24; color: #ff6b6b; font-size: 12px; font-weight: 800; padding: 6px 16px; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
-  .hero-banner-wrap h1 { font-size: 48px; text-transform: uppercase; letter-spacing: 1px; line-height: 1.15; color: #fff; margin-bottom: 15px; font-weight: 900; }
-  .hero-banner-wrap p { font-size: 18px; color: #9ca3af; max-width: 680px; margin: 0 auto 30px; font-family: 'Inter', sans-serif; }
-  .hero-btns { display: flex; justify-content: center; gap: 15px; }
-  .hero-btn-primary { background: #e61c24; color: #fff; padding: 14px 32px; font-weight: 800; border-radius: 8px; text-transform: uppercase; text-decoration: none; font-size: 14px; letter-spacing: 0.5px; transition: all 0.2s; }
-  .hero-btn-primary:hover { background: #c41219; box-shadow: 0 8px 20px rgba(230,28,36,0.4); }
-  .hero-btn-outline { background: transparent; border: 2px solid #fff; color: #fff; padding: 14px 32px; font-weight: 800; border-radius: 8px; text-transform: uppercase; text-decoration: none; font-size: 14px; letter-spacing: 0.5px; transition: all 0.2s; }
-  .hero-btn-outline:hover { background: #fff; color: #0b0d11; }
-</style>
-
-<section class="hero-banner-wrap">
-  <span class="hero-tag">AUTHENTIC JDM PERFORMANCE & ENGINE EQUIPMENT</span>
-  <h1>Asia's Biggest JDM & Performance Store</h1>
-  <p>Precision CNC intake manifolds, billet block guards, titanium hardware, forged wheels, and heavy duty cooling setups.</p>
-  <div class="hero-btns">
-    <a href="/collections/all" class="hero-btn-primary">Browse Full Catalog</a>
-    <a href="/collections/rzcrew-racing" class="hero-btn-outline">Rzcrew Products</a>
+<div class="hero-slider-section">
+  <div class="carousel" data-flickity='{ "autoPlay": 4000, "wrapAround": true, "prevNextButtons": false }'>
+    <div class="carousel-cell">
+      <img src="https://rzcrewgarage.com/cdn/shop/files/VenturiX_HF_Red_Intake_Filter_jpeg_1b75bbf0-ee45-44c8-8525-86a452a941de.jpg" alt="VenturiX High Flow 2.0" style="width: 100%; height: auto; max-height: 480px; object-fit: cover;">
+    </div>
+    <div class="carousel-cell">
+      <img src="https://rzcrewgarage.com/cdn/shop/files/Desmond_Ragamaster_EVO2_Full_line_up.png" alt="Desmond Regamaster EVO2" style="width: 100%; height: auto; max-height: 480px; object-fit: cover;">
+    </div>
   </div>
-</section>
+</div>

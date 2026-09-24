@@ -1,55 +1,92 @@
 {% schema %}
-{ "name": "Featured Products", "settings": [] }
+{
+  "name": "Featured Products",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Heading", "default": "The RZCREW Products!" }
+  ]
+}
 {% endschema %}
 
-<style>
-  .feat-wrap { max-width: 1280px; margin: 0 auto 70px; padding: 0 20px; font-family: 'Inter', sans-serif; }
-  .feat-title { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid #282e3d; padding-bottom: 15px; }
-  .feat-title h2 { font-size: 28px; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; font-family: 'Outfit', sans-serif; font-weight: 800; }
-  .feat-title a { color: #e61c24; font-weight: 700; font-size: 14px; text-transform: uppercase; text-decoration: none; }
-  .feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 25px; }
-  .feat-card { background: #14171f; border: 1px solid #282e3d; border-radius: 12px; overflow: hidden; transition: all 0.25s ease; display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-  .feat-card:hover { transform: translateY(-5px); border-color: #e61c24; box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
-  .feat-img-wrap { height: 230px; background: #fff; padding: 20px; position: relative; display: flex; align-items: center; justify-content: center; }
-  .feat-img-wrap img { max-height: 100%; max-width: 100%; object-fit: contain; }
-  .feat-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-  .feat-vendor { font-size: 12px; color: #e61c24; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .feat-h3 { font-size: 15px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; height: 42px; overflow: hidden; color: #fff; }
-  .feat-price { font-size: 19px; font-weight: 800; color: #fff; margin-top: auto; margin-bottom: 16px; }
-  .feat-price s { font-size: 14px; color: #9ca3af; margin-left: 8px; font-weight: 400; }
-  .feat-add-btn { width: 100%; padding: 11px; background: #1d222e; border: 1px solid #282e3d; color: #fff; font-weight: 700; border-radius: 8px; text-transform: uppercase; font-size: 13px; text-align: center; }
-  .feat-add-btn:hover { background: #e61c24; border-color: #e61c24; }
-</style>
+<div class="featured-products-section" style="padding: 40px 0; background: #000000;">
+  <div class="container">
+    <div class="section-title">
+      <span>{{ section.settings.title }}</span>
+      <a href="/collections/all" class="view-all">VIEW ALL CATALOG &rarr;</a>
+    </div>
 
-<div class="feat-wrap">
-  <div class="feat-title">
-    <h2>The RZCREW Products</h2>
-    <a href="/collections/all">View All Catalog &rarr;</a>
-  </div>
-
-  <div class="feat-grid">
-    {% for product in collections.all.products limit: 8 %}
-      <a href="{{ product.url }}" class="feat-card">
-        <div class="feat-img-wrap">
-          {% if product.compare_at_price > product.price %}
-            <span style="position: absolute; top: 12px; left: 12px; background: #e61c24; color: #fff; font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 4px;">SALE</span>
-          {% endif %}
-          <img src="{{ product.featured_media | image_url: width: 500 }}" alt="{{ product.title | escape }}">
-        </div>
-        <div class="feat-body">
-          <span class="feat-vendor">{{ product.vendor }}</span>
-          <div class="feat-h3">{{ product.title }}</div>
-          <div class="feat-price">
-            {{ product.price | money }}
+    <div class="product-grid">
+      {% assign products_to_show = collections.all.products | limit: 4 %}
+      {% if products_to_show.size > 0 %}
+        {% for product in products_to_show %}
+          <div class="product-card">
             {% if product.compare_at_price > product.price %}
-              <s>{{ product.compare_at_price | money }}</s>
+              <span class="badge-sale">SALE</span>
             {% endif %}
+            <a href="{{ product.url }}" class="card-img-wrap">
+              <img src="{{ product.featured_image | image_url: width: 450 }}" alt="{{ product.title }}">
+            </a>
+            <div class="card-info">
+              <span class="vendor">{{ product.vendor }}</span>
+              <a href="{{ product.url }}" class="title">{{ product.title }}</a>
+              <div class="price-row">
+                <span class="price">${{ product.price | money_without_currency }} CAD</span>
+                {% if product.compare_at_price > product.price %}
+                  <span class="compare-price">${{ product.compare_at_price | money_without_currency }}</span>
+                {% endif %}
+              </div>
+              <button class="btn-add-cart">ADD TO CART</button>
+            </div>
           </div>
-          <div class="feat-add-btn">VIEW DETAILS</div>
+        {% endfor %}
+      {% else %}
+        <!-- Dynamic Fallback Items matching original RZCREW website layout screenshot -->
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="https://rzcrewgarage.com/cdn/shop/files/RZCREW_Racing_Block_Guard_58937b52-97ec-4a96-af44-642a2b58f911.jpg" alt="Rzcrew Racing - Billet Block Guard">
+          </div>
+          <div class="card-info">
+            <span class="vendor">RZCREW RACING</span>
+            <a href="/products/rzcrew-racing-billet-block-guard-toyota-1nz-fe-rz-bg-1nz" class="title">Rzcrew Racing - Billet Block Guard - Toyota 1NZ-FE</a>
+            <div class="price-row"><span class="price">$130.00 CAD</span></div>
+            <button class="btn-add-cart">ADD TO CART</button>
+          </div>
         </div>
-      </a>
-    {% else %}
-      <p style="color: #9ca3af;">Import products using shopify_products.csv to populate featured products.</p>
-    {% endfor %}
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="https://rzcrewgarage.com/cdn/shop/files/CL7_Reinforced_Clutch_pedal_bracket2.jpg" alt="Clutch Pedal Reinforcement Bracket">
+          </div>
+          <div class="card-info">
+            <span class="vendor">RZCREW RACING</span>
+            <a href="/products/rzcrew-racing-clutch-pedal-reinforcement-bracket-honda-accord-euro-r-cl7-rzc-cl7-cpb" class="title">Rzcrew Racing - Clutch Pedal Reinforcement Bracket - Honda Accord CL7</a>
+            <div class="price-row"><span class="price">$39.00 CAD</span></div>
+            <button class="btn-add-cart">ADD TO CART</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <span class="badge-sale">SALE</span>
+          <div class="card-img-wrap">
+            <img src="https://rzcrewgarage.com/cdn/shop/products/rzcrew-racing-titanium-steering-wheel-bolts-rzcrew-1.jpg" alt="Titanium Steering Wheel Bolts">
+          </div>
+          <div class="card-info">
+            <span class="vendor">RZCREW RACING</span>
+            <a href="/products/rzcrew-racing-titanium-steering-wheel-bolts-rz-sttb-m512" class="title">Rzcrew Racing - Titanium Steering Wheel Bolts</a>
+            <div class="price-row"><span class="price">$21.10 CAD</span><span class="compare-price">$24.00</span></div>
+            <button class="btn-add-cart">ADD TO CART</button>
+          </div>
+        </div>
+        <div class="product-card">
+          <span class="badge-sale">SALE</span>
+          <div class="card-img-wrap">
+            <img src="https://rzcrewgarage.com/cdn/shop/products/RZCREW_Racing_Airstream_Intake_manifold_Mazda_MX5_Miata_NA6_NB6_Front_2f842696-b494-46f3-a190-a4c76c1e140a.jpg" alt="Airstream Intake Manifold">
+          </div>
+          <div class="card-info">
+            <span class="vendor">RZCREW RACING</span>
+            <a href="/products/rzcrew-racing-airstream-intake-manifold-mazda-mx-5-miata-roadster-na6ce-air-m-na6ce" class="title">Rzcrew Racing - Airstream Intake Manifold - Mazda Miata NA6CE</a>
+            <div class="price-row"><span class="price">$490.00 CAD</span><span class="compare-price">$520.00</span></div>
+            <button class="btn-add-cart">ADD TO CART</button>
+          </div>
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>
