@@ -1,0 +1,171 @@
+
+:root {
+  --bg-dark: #000000;
+  --bg-card: #ffffff;
+  --primary-cyan: #229bac;
+  --primary-cyan-hover: #1a7d8b;
+  --primary-purple: #a823a0;
+  --font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  font-family: var(--font-family) !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.container {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  padding: 0 15px !important;
+}
+
+.product-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+}
+
+@media (max-width: 1024px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .univ-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .badges-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 640px) {
+  .product-grid { grid-template-columns: 1fr !important; }
+  .univ-grid { grid-template-columns: 1fr !important; }
+  .badges-grid { grid-template-columns: 1fr !important; }
+  .reviews-grid { grid-template-columns: 1fr !important; }
+}
+
+.product-card {
+  background: #ffffff !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #1e293b !important;
+  position: relative !important;
+}
+
+.product-card .card-img-wrap {
+  aspect-ratio: 1 / 1 !important;
+  padding: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #ffffff !important;
+}
+
+.product-card .card-img-wrap img {
+  max-height: 100% !important;
+  object-fit: contain !important;
+  width: auto !important;
+}
+
+.product-card .card-info {
+  padding: 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex-grow: 1 !important;
+  background: #ffffff !important;
+}
+
+.product-card .vendor {
+  font-size: 12px !important;
+  color: #229bac !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 4px !important;
+  display: block !important;
+}
+
+.product-card .title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #0f172a !important;
+  line-height: 1.4 !important;
+  margin-bottom: 10px !important;
+  display: block !important;
+  height: 40px !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
+.product-card .price-row {
+  margin-top: auto !important;
+  margin-bottom: 12px !important;
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 8px !important;
+}
+
+.product-card .price {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+.product-card .compare-price {
+  font-size: 13px !important;
+  color: #94a3b8 !important;
+  text-decoration: line-through !important;
+}
+
+.product-card .btn-add-cart {
+  width: 100% !important;
+  background: #229bac !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 10px !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  text-transform: uppercase !important;
+}
+
+.univ-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+}
+
+.univ-card {
+  position: relative !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  background: linear-gradient(180deg, #1e293b, #0f172a) !important;
+  border: 1px solid #334155 !important;
+  text-align: center !important;
+  padding: 20px 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 220px !important;
+}
+
+.univ-card img {
+  max-height: 130px !important;
+  object-fit: contain !important;
+  margin: 0 auto 15px !important;
+}
+
+.badges-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 15px !important;
+}
+
+.reviews-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 20px !important;
+}
