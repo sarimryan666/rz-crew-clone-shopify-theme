@@ -1,0 +1,55 @@
+{% schema %}
+{ "name": "Featured Products", "settings": [] }
+{% endschema %}
+
+<style>
+  .feat-wrap { max-width: 1280px; margin: 0 auto 70px; padding: 0 20px; font-family: 'Inter', sans-serif; }
+  .feat-title { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 30px; border-bottom: 1px solid #282e3d; padding-bottom: 15px; }
+  .feat-title h2 { font-size: 28px; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; font-family: 'Outfit', sans-serif; font-weight: 800; }
+  .feat-title a { color: #e61c24; font-weight: 700; font-size: 14px; text-transform: uppercase; text-decoration: none; }
+  .feat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 25px; }
+  .feat-card { background: #14171f; border: 1px solid #282e3d; border-radius: 12px; overflow: hidden; transition: all 0.25s ease; display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+  .feat-card:hover { transform: translateY(-5px); border-color: #e61c24; box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+  .feat-img-wrap { height: 230px; background: #fff; padding: 20px; position: relative; display: flex; align-items: center; justify-content: center; }
+  .feat-img-wrap img { max-height: 100%; max-width: 100%; object-fit: contain; }
+  .feat-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+  .feat-vendor { font-size: 12px; color: #e61c24; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .feat-h3 { font-size: 15px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; height: 42px; overflow: hidden; color: #fff; }
+  .feat-price { font-size: 19px; font-weight: 800; color: #fff; margin-top: auto; margin-bottom: 16px; }
+  .feat-price s { font-size: 14px; color: #9ca3af; margin-left: 8px; font-weight: 400; }
+  .feat-add-btn { width: 100%; padding: 11px; background: #1d222e; border: 1px solid #282e3d; color: #fff; font-weight: 700; border-radius: 8px; text-transform: uppercase; font-size: 13px; text-align: center; }
+  .feat-add-btn:hover { background: #e61c24; border-color: #e61c24; }
+</style>
+
+<div class="feat-wrap">
+  <div class="feat-title">
+    <h2>The RZCREW Products</h2>
+    <a href="/collections/all">View All Catalog &rarr;</a>
+  </div>
+
+  <div class="feat-grid">
+    {% for product in collections.all.products limit: 8 %}
+      <a href="{{ product.url }}" class="feat-card">
+        <div class="feat-img-wrap">
+          {% if product.compare_at_price > product.price %}
+            <span style="position: absolute; top: 12px; left: 12px; background: #e61c24; color: #fff; font-size: 11px; font-weight: 800; padding: 3px 10px; border-radius: 4px;">SALE</span>
+          {% endif %}
+          <img src="{{ product.featured_media | image_url: width: 500 }}" alt="{{ product.title | escape }}">
+        </div>
+        <div class="feat-body">
+          <span class="feat-vendor">{{ product.vendor }}</span>
+          <div class="feat-h3">{{ product.title }}</div>
+          <div class="feat-price">
+            {{ product.price | money }}
+            {% if product.compare_at_price > product.price %}
+              <s>{{ product.compare_at_price | money }}</s>
+            {% endif %}
+          </div>
+          <div class="feat-add-btn">VIEW DETAILS</div>
+        </div>
+      </a>
+    {% else %}
+      <p style="color: #9ca3af;">Import products using shopify_products.csv to populate featured products.</p>
+    {% endfor %}
+  </div>
+</div>

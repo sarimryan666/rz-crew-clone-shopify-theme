@@ -1,0 +1,45 @@
+.button-top {
+    position: fixed;
+    display: none;
+    bottom: 20px;
+    right: 20px;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    font-size: 24px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: 35;
+    box-shadow: 0 .2rem rgba(var(--color-aux-box-shadow));
+    color: rgba(var(--color-aux-foreground));
+    border-radius: var(--buttons-radius);
+    border: var(--inputs-border-width) solid rgba(var(--color-aux-border));
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .18s ease
+}
+
+@media(min-width:1200px) {
+    .button-top {
+        display: flex
+    }
+}
+
+.button-top.button-top-visible {
+    opacity: 1;
+    pointer-events: auto
+}
+
+.drawer-open .button-top {
+    display: none !important
+}
+
+.button-top svg {
+    flex: none
+}
+
+/*# sourceMappingURL=/cdn/shop/t/76/assets/component-button-top.css.map?v=23341819898534136861787801425 */

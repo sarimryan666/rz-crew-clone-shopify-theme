@@ -1,0 +1,64 @@
+{% schema %}
+{ "name": "Vehicle Selector", "settings": [] }
+{% endschema %}
+
+<style>
+  .vehicle-finder-wrap { max-width: 1280px; margin: -50px auto 60px; padding: 0 20px; position: relative; z-index: 10; font-family: 'Inter', sans-serif; }
+  .vehicle-card { background: #14171f; border: 1px solid #282e3d; border-radius: 14px; padding: 28px 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); }
+  .vehicle-card-title { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .vehicle-card-title h3 { font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #fff; font-family: 'Outfit', sans-serif; }
+  .vehicle-card-title span { color: #9ca3af; font-size: 14px; font-weight: 400; }
+  .vehicle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .v-group label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #9ca3af; margin-bottom: 6px; letter-spacing: 0.5px; }
+  .v-group select { width: 100%; padding: 12px 14px; background: #1d222e; border: 1px solid #282e3d; color: #fff; border-radius: 8px; outline: none; font-size: 14px; }
+  .v-btn { width: 100%; height: 46px; background: #e61c24; color: #fff; font-weight: 800; border: none; border-radius: 8px; text-transform: uppercase; cursor: pointer; margin-top: 20px; letter-spacing: 0.5px; }
+  .v-btn:hover { background: #c41219; }
+</style>
+
+<div class="vehicle-finder-wrap">
+  <div class="vehicle-card">
+    <div class="vehicle-card-title">
+      <h3>🚗 Select Your Vehicle Fitment</h3>
+      <span>Filter 1,000+ catalog items guaranteed to fit your spec</span>
+    </div>
+    <form class="vehicle-grid" action="/collections/all" method="get">
+      <div class="v-group">
+        <label>1. Vehicle Make</label>
+        <select name="constraint" id="vMake">
+          <option value="">Select Make</option>
+          <option value="Honda">Honda</option>
+          <option value="Toyota">Toyota</option>
+          <option value="Nissan">Nissan</option>
+          <option value="Mazda">Mazda</option>
+          <option value="Porsche">Porsche</option>
+          <option value="Alfa Romeo">Alfa Romeo</option>
+        </select>
+      </div>
+      <div class="v-group">
+        <label>2. Model</label>
+        <select id="vModel">
+          <option value="">Select Model</option>
+          <option value="Accord Euro R">Accord Euro R (CL7/CL9)</option>
+          <option value="350Z">350Z Fairlady Z (Z33)</option>
+          <option value="MX-5 Miata">MX-5 Miata (NA6CE)</option>
+          <option value="Yaris / 86">Yaris / 86 (ZN6)</option>
+          <option value="Cayenne">Cayenne (955/957)</option>
+        </select>
+      </div>
+      <div class="v-group">
+        <label>3. Engine / Trim</label>
+        <select id="vEngine">
+          <option value="">Select Engine</option>
+          <option value="K20A / K24A">K20A / K24A</option>
+          <option value="1NZ-FE 1.5L">1NZ-FE 1.5L</option>
+          <option value="VQ35DE 3.5L V6">VQ35DE 3.5L V6</option>
+          <option value="B6-ZE 1.6L">B6-ZE 1.6L</option>
+          <option value="4.5L / 4.8L V8">4.5L / 4.8L V8</option>
+        </select>
+      </div>
+      <div class="v-group">
+        <button type="submit" class="v-btn">FILTER FITMENT</button>
+      </div>
+    </form>
+  </div>
+</div>
