@@ -18,14 +18,23 @@
     <meta name="description" content="{{ page_description | escape }}">
   {% endif %}
 
-  <link rel="stylesheet" href="https://rzcrewgarage.com/cdn/shop/t/76/assets/base.css">
-  <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}">
-  <link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}">
-  <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}">
-  <link rel="stylesheet" href="https://rzcrewgarage.com/cdn/shop/t/76/assets/flickity.css">
+  {{ 'base.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  {{ 'component-card.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}
+  {{ 'component-scroller.css' | asset_url | stylesheet_tag }}
+  {{ 'component-pills.css' | asset_url | stylesheet_tag }}
+  {{ 'section-slideshow.css' | asset_url | stylesheet_tag }}
+  {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+  {{ 'section-footer.css' | asset_url | stylesheet_tag }}
+  {{ 'section-features.css' | asset_url | stylesheet_tag }}
+  {{ 'flickity.css' | asset_url | stylesheet_tag }}
+  {{ 'google-review.min.css' | asset_url | stylesheet_tag }}
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://rzcrewgarage.com/cdn/shop/t/76/assets/flickity.pkgd.js" defer></script>
+  <script src="{{ 'jquery.min.js' | asset_url }}"></script>
+  <script src="{{ 'flickity.pkgd.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'sticky-header.js' | asset_url }}" defer="defer"></script>
 
   <style>
     :root {
@@ -33,17 +42,6 @@
       --font-body-family: "Space Grotesk", sans-serif;
       --font-heading-family: "Space Grotesk", sans-serif;
       --color-primary-red: #bf1000;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: var(--font-body-family);
-      background-color: #0b0f19;
-      color: #ffffff;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
     }
   </style>
 

@@ -3,10 +3,10 @@
 {% endschema %}
 
 <div>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-predictive-search.css?v=97677080202964449901787801425" media="print" onload="this.media='all'" rel="stylesheet"/>
-<link href="https://rzcrewgarage.com/cdn/shop/t/76/assets/component-price.css?v=48553542294817073951787801425" media="print" onload="this.media='all'" rel="stylesheet"/>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/sticky-header.js?v=138065645986350664591787801425"></script>
-<script defer="defer" src="https://rzcrewgarage.com/cdn/shop/t/76/assets/product-form.js?v=126091133551130777111787801425"></script>
+{{ 'component-predictive-search.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+<script defer="defer" src="{{ 'sticky-header.js' | asset_url }}"></script>
+<script defer="defer" src="{{ 'product-form.js' | asset_url }}"></script>
 <script>
             window.shopUrl = 'https://rzcrewgarage.com';
             window.requestShopUrl = 'https://rzcrewgarage.com';
